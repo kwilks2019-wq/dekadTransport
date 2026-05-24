@@ -1,0 +1,214 @@
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import "./App.css";
+import logo from "./assets/logo.png";
+
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <NavLink to="/" className="brand">
+        
+        <span>Dekad Transportation</span>
+      </NavLink>
+
+      <div className="navLinks">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/services">Services</NavLink>
+        <NavLink to="/contact">Contact Us</NavLink>
+        <NavLink to="/dashboard">Dashboard</NavLink>
+      </div>
+    </nav>
+  );
+}
+
+function Home() {
+  return (
+    <>
+      <section className="hero">
+        <div className="heroBox">
+          
+
+          <h1>Reliable Trucking Solutions for Every Mile</h1>
+          <h2>Dekad Transportation LLC</h2>
+
+          <p>
+            Family-owned and committed to safe, dependable, and on-time freight
+            transportation services.
+          </p>
+
+          <div className="heroButtons">
+            <NavLink to="/contact" className="btn">Request Quote</NavLink>
+            <NavLink to="/services" className="btn secondary">Our Services</NavLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="scrollSection">
+        <h1>Company Dashboard</h1>
+
+        <div className="dashboardGrid">
+          <div className="dashCard">
+            <h3>Active Loads</h3>
+            <p>Track current transportation jobs and deliveries.</p>
+          </div>
+
+          <div className="dashCard">
+            <h3>Quote Requests</h3>
+            <p>Manage customer quote requests quickly and efficiently.</p>
+          </div>
+
+          <div className="dashCard">
+            <h3>Drivers</h3>
+            <p>Monitor driver schedules and assignments.</p>
+          </div>
+
+          <div className="dashCard">
+            <h3>Fleet Status</h3>
+            <p>View truck availability and maintenance updates.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="scrollSection dark">
+        <h1>Our Services</h1>
+
+        <div className="cards">
+          <div className="card">
+            <h3>Freight Transportation</h3>
+            <p>Professional freight hauling for businesses and clients.</p>
+          </div>
+
+          <div className="card">
+            <h3>Regional Loads</h3>
+            <p>Safe and reliable transportation across regional routes.</p>
+          </div>
+
+          <div className="card">
+            <h3>Logistics Support</h3>
+            <p>Helping businesses manage transportation operations.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="scrollSection">
+        <h1>Contact Us</h1>
+
+        <form className="contactForm">
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <input type="text" placeholder="Phone Number" />
+          <textarea placeholder="Tell us what you need"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </>
+  );
+}
+
+function About() {
+  return (
+    <main className="page">
+      <h1>About Dekad Transportation</h1>
+      <p>
+        Dekad Transportation LLC is a family-owned trucking company built on
+        trust, safety, reliability, and hard work.
+      </p>
+      <p>
+        We focus on dependable transportation services, clear communication,
+        and on-time delivery for every customer.
+      </p>
+    </main>
+  );
+}
+
+function Services() {
+  return (
+    <main className="page">
+      <h1>Our Services</h1>
+
+      <div className="cards">
+        <div className="card">
+          <h3>Freight Transportation</h3>
+          <p>Safe and professional freight hauling.</p>
+        </div>
+
+        <div className="card">
+          <h3>Local Loads</h3>
+          <p>Reliable local transportation support.</p>
+        </div>
+
+        <div className="card">
+          <h3>Regional Loads</h3>
+          <p>Dependable regional hauling services.</p>
+        </div>
+
+        <div className="card">
+          <h3>Logistics Support</h3>
+          <p>Helping customers manage transportation needs.</p>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+function Contact() {
+  return (
+    <main className="page">
+      <h1>Contact Us</h1>
+
+      <form className="contactForm">
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <input type="text" placeholder="Phone Number" />
+        <textarea placeholder="Tell us what you need"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </main>
+  );
+}
+
+function Dashboard() {
+  return (
+    <main className="page">
+      <h1>Dashboard</h1>
+
+      <div className="dashboardGrid">
+        <div className="dashCard">
+          <h3>Quote Requests</h3>
+          <p>0 New Requests</p>
+        </div>
+
+        <div className="dashCard">
+          <h3>Active Loads</h3>
+          <p>0 Active Loads</p>
+        </div>
+
+        <div className="dashCard">
+          <h3>Drivers</h3>
+          <p>Family Team</p>
+        </div>
+
+        <div className="dashCard">
+          <h3>Fleet Status</h3>
+          <p>Available</p>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}

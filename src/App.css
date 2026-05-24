@@ -1,0 +1,250 @@
+:root {
+  --navy: #111827;
+  --navy-light: #1f2937;
+  --red: #991b1b;
+  --red-bright: #dc2626;
+  --white: #ffffff;
+  --gray: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.navbar {
+  background: rgba(17, 24, 39, 0.96);
+  border-bottom: 2px solid var(--red-bright);
+  padding: 14px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.brand img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.navLinks {
+  display: flex;
+  gap: 25px;
+}
+
+.navLinks a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.navLinks a:hover,
+.navLinks a.active {
+  color: var(--red-bright);
+}
+
+.hero {
+  min-height: 90vh;
+  padding: 70px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(rgba(17, 24, 39, 0.82), rgba(17, 24, 39, 0.92)),
+    url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7");
+  background-size: cover;
+  background-position: center;
+}
+
+.heroBox {
+  max-width: 760px;
+}
+
+.heroLogo {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin: 0;
+  line-height: 1.05;
+}
+
+.hero h2 {
+  color: var(--red-bright);
+  font-size: 30px;
+}
+
+.hero p {
+  color: var(--gray);
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.heroButtons {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  background: var(--red);
+  color: white;
+  padding: 15px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--red-bright);
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background: white;
+  color: var(--navy);
+}
+
+.page {
+  min-height: 85vh;
+  padding: 70px;
+  background: var(--navy);
+}
+
+.page h1,
+.scrollSection h1 {
+  font-size: 46px;
+  border-left: 6px solid var(--red-bright);
+  padding-left: 16px;
+}
+
+.page p {
+  max-width: 850px;
+  color: var(--gray);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.scrollSection {
+  padding: 80px 70px;
+  background: var(--navy);
+}
+
+.scrollSection.dark {
+  background: var(--navy-light);
+}
+
+.cards,
+.dashboardGrid {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card,
+.dashCard {
+  background: var(--navy-light);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.scrollSection.dark .card {
+  background: var(--navy);
+}
+
+.card:hover,
+.dashCard:hover {
+  transform: translateY(-6px);
+  border-color: var(--red-bright);
+}
+
+.card h3,
+.dashCard h3 {
+  color: var(--red-bright);
+  font-size: 24px;
+}
+
+.contactForm {
+  margin-top: 30px;
+  max-width: 650px;
+  background: var(--navy-light);
+  padding: 30px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contactForm textarea {
+  min-height: 150px;
+}
+
+.contactForm button {
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contactForm button:hover {
+  background: var(--red-bright);
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 40px 25px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .page,
+  .scrollSection {
+    padding: 45px 25px;
+  }
+}
