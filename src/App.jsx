@@ -6,7 +6,6 @@ function Navbar() {
   return (
     <nav className="navbar">
       <NavLink to="/" className="brand">
-        
         <span>Dekad Transportation</span>
       </NavLink>
 
@@ -26,8 +25,6 @@ function Home() {
     <>
       <section className="hero">
         <div className="heroBox">
-          
-
           <h1>Reliable Trucking Solutions for Every Mile</h1>
           <h2>Dekad Transportation LLC</h2>
 
@@ -91,17 +88,66 @@ function Home() {
       </section>
 
       <section className="scrollSection">
-        <h1>Contact Us</h1>
+        <h1>Request a Transportation Quote</h1>
 
-        <form className="contactForm">
-          <input type="text" placeholder="Your Name" />
-          <input type="email" placeholder="Your Email" />
-          <input type="text" placeholder="Phone Number" />
-          <textarea placeholder="Tell us what you need"></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+        <QuoteForm />
       </section>
     </>
+  );
+}
+
+function QuoteForm() {
+  return (
+    <form
+      className="contactForm"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Full Name"
+        required
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        required
+      />
+
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number"
+        required
+      />
+
+      <input
+        type="text"
+        name="pickup"
+        placeholder="Pickup Location"
+      />
+
+      <input
+        type="text"
+        name="delivery"
+        placeholder="Delivery Location"
+      />
+
+      <textarea
+        name="message"
+        placeholder="Tell us about your transportation needs"
+        rows="6"
+        required
+      ></textarea>
+
+      <button type="submit">Request Quote</button>
+    </form>
   );
 }
 
@@ -154,15 +200,8 @@ function Services() {
 function Contact() {
   return (
     <main className="page">
-      <h1>Contact Us</h1>
-
-      <form className="contactForm">
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Your Email" />
-        <input type="text" placeholder="Phone Number" />
-        <textarea placeholder="Tell us what you need"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      <h1>Request a Transportation Quote</h1>
+      <QuoteForm />
     </main>
   );
 }
@@ -201,6 +240,15 @@ export default function App() {
   return (
     <BrowserRouter>
       <Navbar />
+
+      <form name="contact" data-netlify="true" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <input type="text" name="pickup" />
+        <input type="text" name="delivery" />
+        <textarea name="message"></textarea>
+      </form>
 
       <Routes>
         <Route path="/" element={<Home />} />
