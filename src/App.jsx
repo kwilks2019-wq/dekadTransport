@@ -178,7 +178,7 @@ function Contact() {
   );
 }
 
-function Dashboard() {
+function DriverApplication() {
   return (
     <main className="page">
       <h1>Dashboard</h1>
