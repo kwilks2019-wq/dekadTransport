@@ -246,36 +246,6 @@ function Dashboard() {
   );
 }
 
-function Dashboard() {
-  return (
-    <main className="page">
-      <h1>Dashboard</h1>
-
-      <div className="dashboardGrid">
-        <div className="dashCard">
-          <h3>Quote Requests</h3>
-          <p>0 New Requests</p>
-        </div>
-
-        <div className="dashCard">
-          <h3>Active Loads</h3>
-          <p>0 Active Loads</p>
-        </div>
-
-        <div className="dashCard">
-          <h3>Drivers</h3>
-          <p>Family Team</p>
-        </div>
-
-        <div className="dashCard">
-          <h3>Fleet Status</h3>
-          <p>Available</p>
-        </div>
-      </div>
-    </main>
-  );
-}
-
 export default function App() {
   return (
     <BrowserRouter>
