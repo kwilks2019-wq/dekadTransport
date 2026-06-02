@@ -211,36 +211,65 @@ function Dashboard() {
           Interested in driving for Dekad Transportation LLC? Fill out the
           application below and our team will review your information.
         </p>
+<form
+  name="driver-application"
+  method="POST"
+  data-netlify="true"
+  encType="multipart/form-data"
+  className="contactForm"
+>
+  <input type="hidden" name="form-name" value="driver-application" />
 
-        <form
-          name="driver-application"
-          method="POST"
-          data-netlify="true"
-          className="contactForm"
-        >
-          <input type="hidden" name="form-name" value="driver-application" />
+  <input type="text" name="fullName" placeholder="Full Name" required />
+  <input type="email" name="email" placeholder="Email Address" required />
+  <input type="tel" name="phone" placeholder="Phone Number" required />
+  <input type="text" name="city" placeholder="City / State" required />
 
-          <input type="text" name="fullName" placeholder="Full Name" required />
+  <input type="text" name="licenseType" placeholder="CDL License Type" />
+  <input type="text" name="experience" placeholder="Years of Driving Experience" />
 
-          <input type="email" name="email" placeholder="Email Address" required />
+  <input
+    type="text"
+    name="formerEmployer1"
+    placeholder="Former Employer #1 Name"
+  />
 
-          <input type="tel" name="phone" placeholder="Phone Number" required />
+  <input
+    type="tel"
+    name="formerEmployer1Phone"
+    placeholder="Former Employer #1 Phone Number"
+  />
 
-          <input type="text" name="city" placeholder="City / State" required />
+  <input
+    type="text"
+    name="formerEmployer2"
+    placeholder="Former Employer #2 Name"
+  />
 
-          <input type="text" name="licenseType" placeholder="CDL License Type" />
+  <input
+    type="tel"
+    name="formerEmployer2Phone"
+    placeholder="Former Employer #2 Phone Number"
+  />
 
-          <input type="text" name="experience" placeholder="Years of Driving Experience" />
+  <label className="fileLabel">
+    Upload Resume
+    <input
+      type="file"
+      name="resume"
+      accept=".pdf,.doc,.docx"
+    />
+  </label>
 
-          <textarea
-            name="message"
-            placeholder="Tell us about your driving experience"
-            rows="6"
-            required
-          ></textarea>
+  <textarea
+    name="message"
+    placeholder="Tell us about your driving experience"
+    rows="6"
+    required
+  ></textarea>
 
-          <button type="submit">Submit Application</button>
-        </form>
+  <button type="submit">Submit Application</button>
+</form>
       </section>
     </main>
   );

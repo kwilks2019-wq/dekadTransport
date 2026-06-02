@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <form name="driver-application" method="POST" data-netlify="true" hidden>
+  <form
+    name="driver-application"
+    method="POST"
+    data-netlify="true"
+    enctype="multipart/form-data"
+    hidden
+  >
     <input type="hidden" name="form-name" value="driver-application" />
+
     <input type="text" name="fullName" />
     <input type="email" name="email" />
     <input type="tel" name="phone" />
     <input type="text" name="city" />
     <input type="text" name="licenseType" />
     <input type="text" name="experience" />
+
+    <input type="text" name="formerEmployer1" />
+    <input type="tel" name="formerEmployer1Phone" />
+    <input type="text" name="formerEmployer2" />
+    <input type="tel" name="formerEmployer2Phone" />
+
+    <input type="file" name="resume" />
+
     <textarea name="message"></textarea>
   </form>
 </body>

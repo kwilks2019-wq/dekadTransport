@@ -263,4 +263,15 @@ body {
   font-size: 18px;
   max-width: 800px;
 }
+.fileLabel {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fileLabel input {
+  background: white;
+}
 }
