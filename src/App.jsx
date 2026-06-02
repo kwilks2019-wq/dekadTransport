@@ -186,6 +186,74 @@ function Dashboard() {
       <div className="dashboardGrid">
         <div className="dashCard">
           <h3>Quote Requests</h3>
+          <p>View customer quote requests.</p>
+        </div>
+
+        <div className="dashCard">
+          <h3>Active Loads</h3>
+          <p>Track active transportation jobs.</p>
+        </div>
+
+        <div className="dashCard">
+          <h3>Drivers</h3>
+          <p>Manage driver information.</p>
+        </div>
+
+        <div className="dashCard">
+          <h3>Fleet Status</h3>
+          <p>View truck availability.</p>
+        </div>
+      </div>
+
+      <section className="driverApplySection">
+        <h2>Apply to Become a Driver</h2>
+        <p>
+          Interested in driving for Dekad Transportation LLC? Fill out the
+          application below and our team will review your information.
+        </p>
+
+        <form
+          name="driver-application"
+          method="POST"
+          data-netlify="true"
+          className="contactForm"
+        >
+          <input type="hidden" name="form-name" value="driver-application" />
+
+          <input type="text" name="fullName" placeholder="Full Name" required />
+
+          <input type="email" name="email" placeholder="Email Address" required />
+
+          <input type="tel" name="phone" placeholder="Phone Number" required />
+
+          <input type="text" name="city" placeholder="City / State" required />
+
+          <input type="text" name="licenseType" placeholder="CDL License Type" />
+
+          <input type="text" name="experience" placeholder="Years of Driving Experience" />
+
+          <textarea
+            name="message"
+            placeholder="Tell us about your driving experience"
+            rows="6"
+            required
+          ></textarea>
+
+          <button type="submit">Submit Application</button>
+        </form>
+      </section>
+    </main>
+  );
+}
+
+function Dashboard() {
+  return (
+    <main className="page">
+      <h1>Dashboard</h1>
+
+      <div className="dashboardGrid">
+        <div className="dashCard">
+          <h3>Quote Requests</h3>
           <p>0 New Requests</p>
         </div>
 

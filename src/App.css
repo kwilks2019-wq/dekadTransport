@@ -247,4 +247,20 @@ body {
   .scrollSection {
     padding: 45px 25px;
   }
+  .driverApplySection {
+  margin-top: 60px;
+}
+
+.driverApplySection h2 {
+  font-size: 34px;
+  color: white;
+  border-left: 6px solid #dc2626;
+  padding-left: 16px;
+}
+
+.driverApplySection p {
+  color: #d1d5db;
+  font-size: 18px;
+  max-width: 800px;
+}
 }
