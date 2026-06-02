@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
-import logo from "./assets/logo.png";
+
 
 function Navbar() {
   return (
@@ -17,6 +17,34 @@ function Navbar() {
         <NavLink to="/dashboard">Dashboard</NavLink>
       </div>
     </nav>
+  );
+}
+
+function QuoteForm() {
+  return (
+    <form
+      className="contactForm"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="text" name="pickup" placeholder="Pickup Location" />
+      <input type="text" name="delivery" placeholder="Delivery Location" />
+
+      <textarea
+        name="message"
+        placeholder="Tell us about your transportation needs"
+        rows="6"
+        required
+      ></textarea>
+
+      <button type="submit">Request Quote</button>
+    </form>
   );
 }
 
@@ -89,65 +117,9 @@ function Home() {
 
       <section className="scrollSection">
         <h1>Request a Transportation Quote</h1>
-
         <QuoteForm />
       </section>
     </>
-  );
-}
-
-function QuoteForm() {
-  return (
-    <form
-      className="contactForm"
-      name="contact"
-      method="POST"
-      data-netlify="true"
-    >
-      <input type="hidden" name="form-name" value="contact" />
-
-      <input
-        type="text"
-        name="name"
-        placeholder="Full Name"
-        required
-      />
-
-      <input
-        type="email"
-        name="email"
-        placeholder="Email Address"
-        required
-      />
-
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Phone Number"
-        required
-      />
-
-      <input
-        type="text"
-        name="pickup"
-        placeholder="Pickup Location"
-      />
-
-      <input
-        type="text"
-        name="delivery"
-        placeholder="Delivery Location"
-      />
-
-      <textarea
-        name="message"
-        placeholder="Tell us about your transportation needs"
-        rows="6"
-        required
-      ></textarea>
-
-      <button type="submit">Request Quote</button>
-    </form>
   );
 }
 
@@ -242,6 +214,7 @@ export default function App() {
       <Navbar />
 
       <form name="contact" data-netlify="true" hidden>
+        <input type="hidden" name="form-name" value="contact" />
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="tel" name="phone" />
