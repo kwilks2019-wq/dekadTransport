@@ -213,16 +213,7 @@ export default function App() {
     <BrowserRouter>
       <Navbar />
 
-      <form name="contact" data-netlify="true" hidden>
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="tel" name="phone" />
-        <input type="text" name="pickup" />
-        <input type="text" name="delivery" />
-        <textarea name="message"></textarea>
-      </form>
-
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
