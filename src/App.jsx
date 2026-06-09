@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
-import freightlinerHero from "./assets/freightliner-hero.jpg";
+import freightlinerHero from "./assets/freightliner-hero.png";
 
 
 function Navbar() {
