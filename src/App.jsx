@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
+import freightlinerHero from "./assets/freightliner-hero.jpg";
 
 
 function Navbar() {
@@ -51,8 +52,13 @@ function QuoteForm() {
 function Home() {
   return (
     <>
-      <section className="hero">
-        <div className="heroBox">
+      <section
+  className="hero"
+  style={{
+    backgroundImage: `linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url(${freightlinerHero})`,
+  }}
+>
+  <div className="heroBox">
           <h1>Reliable Trucking Solutions for Every Mile</h1>
           <h2>Dekad Transportation LLC</h2>
 
